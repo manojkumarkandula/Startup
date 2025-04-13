@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatentEase - Turn Your Idea Into a Patent</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1A2942", secondary: "#D4B872" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      }
+      .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      }
+      .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      }
+      .accordion-content.active {
+      max-height: 500px;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      .custom-checkbox {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #D4B872;
+      border-radius: 4px;
+      margin-right: 8px;
+      cursor: pointer;
+      }
+      .custom-checkbox::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 6px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-checkbox.checked {
+      background-color: #D4B872;
+      }
+      .custom-checkbox.checked::after {
+      display: block;
+      }
+      .custom-radio {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #D4B872;
+      border-radius: 50%;
+      margin-right: 8px;
+      cursor: pointer;
+      }
+      .custom-radio::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 4px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #D4B872;
+      }
+      .custom-radio.checked::after {
+      display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          data-readdy="true"
+          class="h-16"
+        >
+          <img
+            src="WhatsApp Image 2025-04-11 at 15.41.12_5a160a00.jpg"
+            alt="logo"
+            class="h-full rounded-lg"
+            
+            />
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#how-it-works" class="text-gray-600 hover:text-secondary transition-colors">How It Works</a>
+          <a href="#benefits" class="text-gray-600 hover:text-secondary transition-colors">Benefits</a>
+          <a href="#industries" class="text-gray-600 hover:text-secondary transition-colors">Industries</a>
+          <a href="#career" class="text-gray-600 hover:text-secondary transition-colors">Career</a>
+          <a href="#services" class="text-gray-600 hover:text-secondary transition-colors">Services</a>
+          <a href="#faq" class="text-gray-600 hover:text-secondary transition-colors">FAQ</a>
+          <a href="#contact" class="bg-secondary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Get Started</a>
+        </div>
+        
+        <button class="md:hidden w-10 h-10 flex items-center justify-center">
+          <i class="ri-menu-line text-primary text-2xl"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex items-center overflow-hidden"
+      style="background-image: url('https://readdy.ai/api/search-image?query=A%20professional%20legal%20office%20setting%20with%20a%20modern%2C%20minimalist%20design.%20The%20left%20side%20has%20a%20clean%2C%20white%20background%20that%20gradually%20transitions%20to%20the%20right%20side%20showing%20abstract%20legal%20documents%2C%20patents%2C%20and%20tech%20elements.%20The%20image%20has%20a%20navy%20blue%20and%20gold%20color%20scheme%20with%20soft%20lighting.%20The%20transition%20between%20the%20white%20space%20and%20the%20imagery%20must%20be%20subtle%20and%20natural.&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/50"
+      ></div>
+      <div class="container mx-auto px-6 relative py-32">
+        <div class="max-w-3xl">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight"
+          >
+            Turn Your Idea Into a Patent —
+            <span id="changing-word">Effortlessly</span>
+          </h1>
+          <style>
+            #changing-word {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            }
+            #changing-word.fade {
+            opacity: 0;
+            }
+          </style>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const words = [
+                "Effortlessly",
+                "Confidently",
+                "Professionally",
+                "Securely",
+                "Seamlessly",
+              ];
+              const wordElement = document.getElementById("changing-word");
+              let currentIndex = 0;
+              function changeWord() {
+                wordElement.classList.add("fade");
+                setTimeout(() => {
+                  currentIndex = (currentIndex + 1) % words.length;
+                  wordElement.textContent = words[currentIndex];
+                  wordElement.classList.remove("fade");
+                }, 500);
+              }
+              setInterval(changeWord, 2000);
+            });
+          </script>
+          <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+            We help individuals and startups protect their ideas through expert
+            patent filing. Our streamlined process makes securing your
+            intellectual property simpler than ever before.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors text-center whitespace-nowrap"
+              >Secure My Idea</a
+            >
+            <a
+              href="#how-it-works"
+              class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors text-center whitespace-nowrap"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i class="ri-arrow-down-line text-primary text-2xl"></i>
+      </div>
+    </section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            How It Works
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Our streamlined process makes patent filing accessible to everyone,
+            from individual inventors to growing startups.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="relative fade-in">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
+              >
+                <span class="text-secondary font-bold text-xl">1</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Submit Your Idea
+              </h3>
+              <p class="text-gray-600">
+                Describe your innovation in simple terms. No technical jargon
+                required — we'll handle the details.
+              </p>
+            </div>
+            <div
+              class="hidden lg:block absolute top-8 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300 -z-10"
+            ></div>
+          </div>
+          <div class="relative fade-in">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
+              >
+                <span class="text-secondary font-bold text-xl">2</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Expert Review
+              </h3>
+              <p class="text-gray-600">
+                Our patent attorneys analyze your idea for patentability and
+                provide strategic guidance.
+              </p>
+            </div>
+            <div
+              class="hidden lg:block absolute top-8 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300 -z-10"
+            ></div>
+          </div>
+          <div class="relative fade-in">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
+              >
+                <span class="text-secondary font-bold text-xl">3</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Draft & File
+              </h3>
+              <p class="text-gray-600">
+                We prepare comprehensive patent documentation and file with the
+                appropriate patent offices.
+              </p>
+            </div>
+            <div
+              class="hidden lg:block absolute top-8 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300 -z-10"
+            ></div>
+          </div>
+          <div class="fade-in">
+            <div class="flex flex-col items-center text-center">
+              <div
+                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
+              >
+                <span class="text-secondary font-bold text-xl">4</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Track Your Patent
+              </h3>
+              <p class="text-gray-600">
+                Monitor your application status through our intuitive dashboard
+                as it progresses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Why Choose Us
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Combining legal expertise with cutting-edge technology to transform
+            your innovative ideas into protected intellectual property.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-shield-keyhole-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Confidentiality
+            </h3>
+            <p class="text-gray-600">Free NDA protection for your idea.</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-team-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Expert Guidance
+            </h3>
+            <p class="text-gray-600">
+              Work with experienced patent professionals.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-lightbulb-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              No Idea Too Early
+            </h3>
+            <p class="text-gray-600">We accept raw concepts and sketches.</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-service-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              End-to-End Service
+            </h3>
+            <p class="text-gray-600">From consultation to filing.</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-customer-service-2-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Real Support
+            </h3>
+            <p class="text-gray-600">Dedicated patent consultants.</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i
+                class="ri-money-dollar-circle-line text-secondary text-2xl"
+              ></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Transparent Pricing
+            </h3>
+            <p class="text-gray-600">Flat fees, no hidden costs.</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-timer-flash-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Fast Turnaround
+            </h3>
+            <p class="text-gray-600">Quick filing process.</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-global-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Global Protection
+            </h3>
+            <p class="text-gray-600">International filing options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Secure Idea Submission Form -->
+    <section id="contact" class="min-h-screen flex items-center bg-primary">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Secure Your Idea Today
+          </h2>
+          <p class="text-gray-300 max-w-2xl mx-auto">
+            Submit your idea securely under our automatic NDA protection. Our
+            experts will review your submission and contact you within 24 hours.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div
+          class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-10 fade-in"
+        >
+          <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label for="fullName" class="block text-gray-700 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="John Smith"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="john@example.com"
+                />
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="ideaTitle" class="block text-gray-700 mb-2"
+                >Title of Idea</label
+              >
+              <input
+                type="text"
+                id="ideaTitle"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="e.g. Smart Home Energy Management System"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="ideaDescription" class="block text-gray-700 mb-2"
+                >Description of Idea</label
+              >
+              <textarea
+                id="ideaDescription"
+                rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="Describe your idea in detail. Include the problem it solves and how it works."
+              ></textarea>
+            </div>
+            <div class="mb-8">
+              <label class="block text-gray-700 mb-2"
+                >Upload File (optional)</label
+              >
+              <div
+                class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center"
+              >
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 mx-auto mb-4"
+                >
+                  <i class="ri-upload-2-line text-gray-500 text-2xl"></i>
+                </div>
+                <p class="text-gray-500 mb-2">Drag and drop files here or</p>
+                <button
+                  type="button"
+                  class="text-secondary font-medium hover:underline !rounded-button whitespace-nowrap"
+                >
+                  Browse Files
+                </button>
+                <input type="file" class="hidden" />
+                <p class="text-xs text-gray-500 mt-2">
+                  Supported formats: PDF, DOC, JPG, PNG (Max 10MB)
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center mb-8">
+              <div class="custom-checkbox" id="ndaCheckbox"></div>
+              <label for="ndaCheckbox" class="text-gray-700"
+                >I agree to submit my idea under NDA protection</label
+              >
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-secondary text-white py-4 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+            >
+              Submit Securely
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="min-h-screen flex items-center bg-gray-50">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            What Our Clients Say
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hear from inventors and entrepreneurs who've successfully patented
+            their ideas with our help.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md p-8 fade-in">
+            <p class="text-gray-600 italic mb-6">
+              "The team made the patent process incredibly straightforward.
+              Within 6 months, we had our provisional patent approved, which was
+              crucial for our funding round."
+            </p>
+            <div class="flex mt-4">
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary"></i>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-8 fade-in">
+            <p class="text-gray-600 italic mb-6">
+              "As a first-time inventor, I was intimidated by the patent
+              process. Their team guided me through every step, making it
+              painless and affordable."
+            </p>
+            <div class="flex mt-4">
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary"></i>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-8 fade-in">
+            <p class="text-gray-600 italic mb-6">
+              "We've filed 5 patents through their platform. The flat fee
+              structure saved us thousands compared to traditional law firms,
+              with the same quality results."
+            </p>
+            <div class="flex mt-4">
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-fill text-secondary mr-1"></i>
+              <i class="ri-star-half-fill text-secondary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Industries Section -->
+    <section id="industries" class="py-20 bg-white">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Industries
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Supporting innovation and research in education.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div class="flex justify-center">
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100 max-w-sm"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-graduation-cap-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Colleges
+            </h3>
+            <p class="text-gray-600">
+              Illuminating the future of education through bold, student-led innovation.
+            </p>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Services
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Comprehensive patent and intellectual property services for your
+            innovation journey.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-file-search-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Patent Search
+            </h3>
+            <p class="text-gray-600">
+              Comprehensive prior art search and patentability assessment to
+              evaluate your invention.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-draft-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Patent Drafting
+            </h3>
+            <p class="text-gray-600">
+              Expert preparation of patent applications with comprehensive
+              claims and illustrations.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-global-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Global Filing
+            </h3>
+            <p class="text-gray-600">
+              International patent filing and prosecution services in major
+              jurisdictions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Careers Section -->
+    <section id="career" class="py-20 bg-white">
+
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Career 
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Join our team and help shape the future of innovation protection.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-rocket-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Startup Specialists
+            </h3>
+            <p class="text-gray-600">
+              Help startups protect and commercialize their innovations.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-shield-star-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Patent Attorneys
+            </h3>
+            <p class="text-gray-600">
+              Join our team of experienced patent professionals.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+            >
+              <i class="ri-exchange-funds-line text-secondary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Tech Transfer
+            </h3>
+            <p class="text-gray-600">
+              Support technology commercialization and licensing initiatives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="min-h-screen flex items-center bg-gray-50">
+      <div class="container mx-auto px-6 py-32">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Find answers to common questions about our patent filing process.
+          </p>
+          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+            <div
+              class="flex justify-between items-center cursor-pointer accordion-header"
+            >
+              <h3 class="text-lg font-semibold text-primary">
+                How long does the patent process take?
+              </h3>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </div>
+            <div class="accordion-content mt-4">
+              <p class="text-gray-600">
+                The patent process timeline varies based on the type of
+                protection you choose. A provisional patent can be filed within
+                2-3 days of submission. For a full utility patent, the drafting
+                and filing process typically takes 4-5 days. After filing,
+                USPTO examination can take 1-3 years, though you have patent
+                pending status during this time.
+              </p>
+            </div>
+          </div>
+          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+            <div
+              class="flex justify-between items-center cursor-pointer accordion-header"
+            >
+              <h3 class="text-lg font-semibold text-primary">
+                What's the difference between provisional and full patents?
+              </h3>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </div>
+            <div class="accordion-content mt-4">
+              <p class="text-gray-600">
+                A provisional patent application establishes an early filing
+                date and gives you "patent pending" status for 12 months while
+                you develop your invention. It's less formal and less expensive.
+                A full (non-provisional) utility patent provides complete
+                protection for 20 years and includes formal claims, detailed
+                descriptions, and professional illustrations. Many inventors
+                start with a provisional and then file a full patent before the
+                12-month period expires.
+              </p>
+            </div>
+          </div>
+          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+            <div
+              class="flex justify-between items-center cursor-pointer accordion-header"
+            >
+              <h3 class="text-lg font-semibold text-primary">
+                How do you protect my idea during submission?
+              </h3>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </div>
+            <div class="accordion-content mt-4">
+              <p class="text-gray-600">
+                All submissions are automatically protected under our legally
+                binding NDA. Our secure platform uses bank-level encryption, and
+                access to your information is strictly limited to the patent
+                attorneys assigned to your case. We never share your ideas with
+                third parties without your explicit permission.
+              </p>
+            </div>
+          </div>
+          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+            <div
+              class="flex justify-between items-center cursor-pointer accordion-header"
+            >
+              <h3 class="text-lg font-semibold text-primary">
+                What if my idea isn't patentable?
+              </h3>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </div>
+            <div class="accordion-content mt-4">
+              <p class="text-gray-600">
+                If our assessment determines your idea may not be patentable in
+                its current form, we'll provide detailed feedback on why and
+                suggest potential modifications that could improve
+                patentability. We may also recommend alternative forms of
+                intellectual property protection, such as trademarks,
+                copyrights, or trade secrets. If we determine your idea is not
+                patentable at all, we offer a partial refund of our service fee.
+              </p>
+            </div>
+          </div>
+          <div class="mb-6 fade-in">
+            <div
+              class="flex justify-between items-center cursor-pointer accordion-header"
+            >
+              <h3 class="text-lg font-semibold text-primary">
+                Do your fees include government filing fees?
+              </h3>
+              <div
+                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
+              >
+                <i class="ri-add-line"></i>
+              </div>
+            </div>
+            <div class="accordion-content mt-4">
+              <p class="text-gray-600">
+                Our service fees include our legal work, patent drafting, and
+                filing services. USPTO filing fees are additional and vary based
+                on your entity size (small entity, micro-entity, or large
+                entity). We'll provide a clear breakdown of all applicable
+                government fees before filing, and you can pay these directly
+                through our platform. Most individual inventors and startups
+                qualify for reduced fees as small or micro entities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary text-white">
+      <div class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <a
+              data-readdy="true"
+              class="h-16 mb-6 block"
+              class="h-full rounded-lg"
+            >
+              <img
+                src="WhatsApp Image 2025-04-11 at 15.41.12_5a160a00.jpg"
+                alt="logo"
+                class="h-full"
+              />
+            </a>
+            <p class="text-gray-300 mb-6">
+              We make patent filing accessible to everyone, from individual
+              inventors to growing startups.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#how-it-works"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#benefits"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Benefits</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#industries"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Industries</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#career"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Career</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <!-- ... existing footer code ... -->
+<div>
+  <h4 class="text-lg font-semibold mb-6">Legal</h4>
+  <ul class="space-y-3">
+    <li>
+      <a
+        href="legal.html#terms"
+        class="text-gray-300 hover:text-white transition-colors"
+        >Terms of Service</a
+      >
+    </li>
+    <li>
+      <a
+        href="legal.html#privacy"
+        class="text-gray-300 hover:text-white transition-colors"
+        >Privacy Policy</a
+      >
+    </li>
+    <li>
+      <a
+        href="legal.html#cookie"
+        class="text-gray-300 hover:text-white transition-colors"
+        >Cookie Policy</a
+      >
+    </li>
+    <li>
+      <a
+        href="legal.html#nda"
+        class="text-gray-300 hover:text-white transition-colors"
+        >NDA Terms</a
+      >
+    </li>
+    <li>
+      <a
+        href="legal.html#refund"
+        class="text-gray-300 hover:text-white transition-colors"
+        >Refund Policy</a
+      >
+    </li>
+  </ul>
+</div>
+<!-- ... rest of footer code ... -->
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="ri-map-pin-line mr-3 mt-1"></i>
+                <span class="text-gray-300"
+                  >123 Innovation Way, Suite 400<br />San Francisco, CA
+                  94107</span
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3"></i>
+                <a
+                  href="mailto:info@patentease.com"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >leosphereinnovations@gmail.com</a
+                >
+              </li>
+              <li class="flex items-center">
+                <i class="ri-phone-line mr-3"></i>
+                <a
+                  href="tel:+18005551234"
+                  class="text-gray-300 hover:text-white transition-colors"
+                  >+1 (800) 555-1234</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 PatentEase. All rights reserved.
+          </p>
+          
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll(".fade-in");
+        function checkFade() {
+          fadeElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            if (elementTop < window.innerHeight - elementVisible) {
+              element.classList.add("visible");
+            }
+          });
+        }
+        window.addEventListener("scroll", checkFade);
+        checkFade(); // Check on initial load
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+        accordionHeaders.forEach((header) => {
+          header.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector(".accordion-icon i");
+            if (content.classList.contains("active")) {
+              content.classList.remove("active");
+              icon.classList.remove("ri-subtract-line");
+              icon.classList.add("ri-add-line");
+            } else {
+              content.classList.add("active");
+              icon.classList.remove("ri-add-line");
+              icon.classList.add("ri-subtract-line");
+            }
+          });
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Custom checkbox functionality
+        const ndaCheckbox = document.getElementById("ndaCheckbox");
+        ndaCheckbox.addEventListener("click", function () {
+          this.classList.toggle("checked");
+        });
+      });
+    </script>
+  </body>
+</html>
