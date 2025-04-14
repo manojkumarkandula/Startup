@@ -206,64 +206,65 @@ document.addEventListener("DOMContentLoaded", function () {
     // Industries Section animations
     const industriesSection = document.getElementById("industries");
     if (industriesSection) {
-      const industryCards = industriesSection.querySelectorAll(".grid > div");
-      let sourceCard = null;
+      const industryCards = industriesSection.querySelectorAll(".grid > a");
       
       // Initially set up all cards
       industryCards.forEach((card, index) => {
-        // Add base class for styling
-        card.classList.add("industry-card");
+        // Remove existing animation classes
+        card.classList.remove("left-enter", "middle-enter", "right-enter");
         
-        // The second card in the first row (index 1) is our source
-        if (index === 1) {
-          card.classList.add("industry-card-source");
-          sourceCard = card;
-        } else {
-          // All other cards start hidden
+        // Set initial state - all cards except the second one should be invisible
+        if (index !== 1) {
           card.style.opacity = "0";
+        }
+        
+        // Add animation classes based on position
+        if (index === 0) {
+          // Card 1: fadeInRight
+          card.classList.add("animate__animated", "animate__fadeInRight");
+        } else if (index === 2) {
+          // Card 3: fadeInLeft
+          card.classList.add("animate__animated", "animate__fadeInLeft");
+        } else if (index === 3) {
+          // Card 4: fadeInTopRight
+          card.classList.add("animate__animated", "animate__fadeInTopRight");
+        } else if (index === 4) {
+          // Card 5: fadeInDown
+          card.classList.add("animate__animated", "animate__fadeInDown");
+        } else if (index === 5) {
+          // Card 6: fadeInTopLeft
+          card.classList.add("animate__animated", "animate__fadeInTopLeft");
+        }
+        
+        // Set animation delay for staggered effect
+        if (index !== 1) {
+          card.style.animationDelay = `${(index < 1 ? index : index - 1) * 0.15 + 0.2}s`;
+          card.style.animationPlayState = "paused";
         }
       });
       
       // Setup Intersection Observer for animation trigger
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && sourceCard) {
-            // Animate each card with its specific animation
-            industryCards.forEach((card, index) => {
-              if (index !== 1) { // Skip the source card
-                // Apply specific animations based on card index
-                switch(index) {
-                  case 0: // Card 1
-                    card.classList.add("animate__animated", "animate__fadeInRight");
-                    break;
-                  case 2: // Card 3
-                    card.classList.add("animate__animated", "animate__fadeInLeft");
-                    break;
-                  case 3: // Card 4
-                    card.classList.add("animate__animated", "animate__fadeInTopRight");
-                    break;
-                  case 4: // Card 5
-                    card.classList.add("animate__animated", "animate__fadeInDown");
-                    break;
-                  case 5: // Card 6
-                    card.classList.add("animate__animated", "animate__fadeInTopLeft");
-                    break;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+            // Wait until the section is sufficiently visible before triggering animations
+            setTimeout(() => {
+              // Get all cards except the second one
+              industryCards.forEach((card, index) => {
+                if (index !== 1) {
+                  // Make card visible and play animation
+                  card.style.opacity = "1";
+                  card.style.animationPlayState = "running";
                 }
-                
-                // Set animation delay for staggered effect
-                card.style.animationDelay = `${(index < 1 ? index : index - 1) * 0.15}s`;
-                
-                // Make card visible
-                card.style.opacity = "1";
-              }
-            });
+              });
+            }, 300); // Add a small delay to ensure the section is visible enough
             
             // Disconnect observer after triggering animations
             observer.disconnect();
           }
         });
       }, {
-        threshold: 0.3 // Trigger when 30% of the section is visible
+        threshold: 0.4 // Trigger when 60% of the section is visible
       });
       
       // Start observing the industries section
@@ -333,42 +334,5 @@ document.addEventListener("DOMContentLoaded", function () {
       card.classList.add('service-hover-card');
     });
     
-    // Remove the conflicting event listener at the bottom
-    // The code below should be removed:
-    /*
-    document.addEventListener('DOMContentLoaded', function() {
-      const industryCards = document.querySelectorAll('#industries .grid > div');
-      industryCards.forEach(card => {
-        card.classList.remove('industry-hover-card');
-        card.classList.remove('industry-pop-card');
-        
-        card.style.transform = '';
-        
-        const icon = card.querySelector('.w-16');
-        if (icon) {
-          icon.style.transform = '';
-          icon.style.backgroundColor = '';
-        }
-      });
-    });
-    */
+   
 });
-
-// REMOVE THIS ENTIRE BLOCK - it's causing the conflict
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Remove industry hover card classes
-//   const industryCards = document.querySelectorAll('#industries .grid > div');
-//   industryCards.forEach(card => {
-//     card.classList.remove('industry-hover-card');
-//     card.classList.remove('industry-pop-card');
-//     
-//     // Remove any inline styles that might have been added
-//     card.style.transform = '';
-//     
-//     // Find and reset icon styles
-//     const icon = card.querySelector('.w-16');
-//     if (icon) {
-//       icon.style.transform = '';
-//       icon.style.backgroundColor = '';
-//     }
-//   });
