@@ -603,43 +603,37 @@ transform: translate(0) scale(1);
 #industries .industry-card-source:hover .w-16 {
   background-color: rgba(212, 175, 55, 0.1);
 }
-
-/* Logo animation */
-.logo-container {
+/* Add these styles for the industry cards animation */
+#industries .grid {
 position: relative;
-overflow: hidden;
 }
 
-@keyframes morphLogo {
-0% {
-transform: scale(1);
+#industries .grid > a {
+position: relative;
+z-index: 1;
+}
+
+/* Make the second card (index 1) the source card that others animate from */
+#industries .grid > a:nth-child(2) {
+z-index: 2;
+}
+
+/* Ensure animations only play once */
+.animate__animated {
+--animate-duration: 0.8s;
+animation-fill-mode: both;
+}
+
+/* Override any existing animation classes for these cards */
+#industries .grid > a.left-enter,
+#industries .grid > a.middle-enter,
+#industries .grid > a.right-enter {
 opacity: 1;
-}
-50% {
-transform: scale(0.8);
-opacity: 0.5;
-}
-100% {
-transform: scale(1);
-opacity: 0;
-}
+transform: none;
+transition: none;
 }
 
-@keyframes showText {
-0% {
-opacity: 0;
-transform: translateY(10px);
-}
-100% {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-.group:hover img {
-animation: morphLogo 0.4s forwards;
-}
-
-.group:hover .logo-text {
-animation: showText 0.3s 0.2s forwards;
+/* Add a small delay before animation starts */
+#industries .grid > a.animate__animated {
+animation-delay: 0.2s;
 }
