@@ -333,6 +333,4 @@ document.addEventListener("DOMContentLoaded", function () {
     serviceCards.forEach(card => {
       card.classList.add('service-hover-card');
     });
-    
-   
 });
