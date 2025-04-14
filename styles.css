@@ -1,0 +1,645 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+/* Word carousel animation */
+.word-carousel {
+position: relative;
+display: inline-block;
+}
+
+.word-carousel div {
+position: absolute;
+opacity: 0;
+transition: opacity 0.5s ease;
+left: 0;
+top: 0;
+}
+
+.word-carousel div.visible {
+position: relative;
+opacity: 1;
+}
+
+/* Benefits cards animation */
+.benefits-container {
+position: relative;
+transition: all 0.3s ease;
+min-height: 400px;
+}
+
+.benefit-card {
+position: relative;
+transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+z-index: 1;
+cursor: pointer;
+overflow: hidden;
+transform-origin: center;
+will-change: transform, opacity, filter;
+}
+
+.benefit-card:not(.active):hover {
+transform: translateY(-12px) scale(1.02);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-card.active {
+position: fixed;
+top: 50% !important;
+left: 50% !important;
+transform: translate(-50%, -50%);
+width: 90%;
+max-width: 600px;
+max-height: 80vh;
+overflow-y: auto;
+scrollbar-width: none; /* Firefox */
+-ms-overflow-style: none; /* IE and Edge */
+z-index: 1000;
+box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.benefit-card.active::-webkit-scrollbar {
+display: none;
+}
+
+/* Benefits overlay for modal effect */
+.benefits-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(5px);
+z-index: 999;
+opacity: 1;
+transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.benefits-overlay.hidden {
+display: none;
+opacity: 0;
+}
+
+.benefit-card {
+position: relative;
+transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+z-index: 1;
+cursor: pointer;
+overflow: hidden;
+transform-origin: center;
+will-change: transform, opacity, filter;
+}
+
+.benefit-card.active {
+transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+/* Benefits Section animations */
+.benefit-card-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.benefit-card-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.benefit-card {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  background-color: white;
+}
+
+.benefit-card.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 20;
+  animation: card-expand 0.3s ease-out forwards;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.benefit-card.closing {
+  animation: card-collapse 0.3s ease-in forwards;
+}
+
+.benefit-card .detailed-content {
+  opacity: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.benefit-card.active .detailed-content {
+  display: block;
+  opacity: 1;
+  max-height: 2000px;
+  transition: opacity 0.5s ease 0.2s, max-height 0.5s ease;
+}
+
+.benefit-card.active .brief-content {
+  margin-bottom: 1rem;
+}
+
+.benefits-overlay {
+  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: none;
+}
+
+@keyframes card-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes card-collapse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.benefit-card.active .brief-content {
+  display: none;
+}
+
+.benefit-card.active:hover {
+  cursor: zoom-out;
+}
+.faq-answer {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-item.active .faq-answer {
+max-height: 500px;
+}
+input[type="range"]::-webkit-slider-thumb {
+appearance: none;
+width: 20px;
+height: 20px;
+background: #d4af37;
+border-radius: 50%;
+cursor: pointer;
+}
+input[type="checkbox"] {
+appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #0a2463;
+border-radius: 4px;
+position: relative;
+}
+input[type="checkbox"]:checked {
+background-color: #0a2463;
+}
+input[type="checkbox"]:checked::after {
+content: "";
+position: absolute;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+top: 2px;
+left: 6px;
+transform: rotate(45deg);
+}
+
+/* LEOSPHERE Meaning Section animations */
+.meaning-card {
+opacity: 0;
+transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, opacity;
+}
+
+.meaning-card.left-enter {
+transform: translateX(-100px);
+}
+
+.meaning-card.right-enter {
+transform: translateX(100px);
+}
+
+.meaning-card.middle-enter {
+transform: scale(0.7);
+}
+
+.meaning-card.animate {
+opacity: 1;
+transform: translate(0) scale(1);
+}
+
+/* Industries Section animations */
+/* Industries Section animations - Card dealing effect */
+#industries .grid {
+  position: relative;
+  min-height: 600px;
+  perspective: 1000px;
+}
+
+.industry-card {
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.industry-card-stacked {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.industry-card-dealt {
+  position: relative;
+  transform: translate(0, 0) scale(1) rotate(0);
+  opacity: 1;
+  pointer-events: auto;
+  animation: card-spread 0.8s forwards;
+}
+
+@keyframes card-spread {
+  0% {
+    opacity: 0;
+    transform: translate(calc(50% - 100%), 0) scale(0.8);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.industry-card-hidden {
+  opacity: 0;
+  transform: translate(-50%, -100px) scale(0.5);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.industry-card-visible {
+  opacity: 1;
+  z-index: 1;
+  position: relative;
+}
+
+.industry-card-animate {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* Make sure the grid container has proper positioning */
+#industries .grid {
+  position: relative;
+  min-height: 600px;
+}
+
+/* Industries Section animations */
+#industries .grid {
+  position: relative;
+  min-height: 600px;
+}
+
+.industry-card {
+  position: relative;
+  z-index: 1;
+}
+
+.industry-card-source {
+  /* The source card (2nd card in first row) stays in place */
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* Custom animations for Animate.css */
+.animate__fadeInTopRight {
+  animation-name: fadeInTopRight !important;
+}
+
+.animate__fadeInTopLeft {
+  animation-name: fadeInTopLeft !important;
+}
+
+@keyframes fadeInTopRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInTopLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Animation duration and timing */
+.animate__animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.industry-card-animate {
+  opacity: 1;
+  position: relative;
+  transform: translate(0, 0) scale(1);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Make sure the grid container has proper positioning */
+#industries .grid {
+  position: relative;
+  min-height: 600px;
+}
+
+/* Testimonials Section hover animations */
+.testimonial-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #0a2463, #d4af37);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card-animated {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card-animated::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Quote icon animation */
+.testimonial-card .quote-icon {
+  transition: all 0.5s ease;
+}
+
+.testimonial-card-animated .quote-icon {
+  opacity: 0.6 !important;
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Industries Section hover animations */
+.industry-hover-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.industry-hover-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, rgba(10, 36, 99, 0.05), transparent);
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+.industry-hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.industry-hover-card:hover::after {
+  height: 100%;
+}
+
+.industry-hover-card:hover .w-16 {
+  transform: scale(1.1);
+  background-color: rgba(10, 36, 99, 0.2);
+}
+
+.industry-hover-card .w-16 {
+  transition: all 0.4s ease;
+}
+
+.industry-hover-card:hover i {
+  transform: rotateY(180deg);
+}
+
+.industry-hover-card i {
+  transition: transform 0.6s ease;
+}
+
+/* Enhanced Services Section hover animations with logo flip */
+.service-hover-card, 
+#services .bg-white {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-hover-card::before,
+#services .bg-white::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-hover-card:hover,
+#services .bg-white:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  animation: service-pulse 1.5s infinite;
+}
+
+.service-hover-card:hover::before,
+#services .bg-white:hover::before {
+  opacity: 1;
+}
+
+/* Add logo flip animation */
+.service-hover-card .h-48 i,
+#services .bg-white .h-48 i {
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  display: inline-block;
+}
+
+.service-hover-card:hover .h-48 i,
+#services .bg-white:hover .h-48 i {
+  transform: rotateY(180deg) scale(1.2);
+  color: #0a2463;
+}
+
+.service-hover-card .h-48,
+#services .bg-white .h-48 {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-hover-card:hover .h-48,
+#services .bg-white:hover .h-48 {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-radius: 8px;
+}
+
+.service-hover-card:hover button,
+#services .bg-white:hover button {
+  color: #d4af37;
+  font-weight: 500;
+}
+
+.service-hover-card:hover button i,
+#services .bg-white:hover button i {
+  transform: translateX(5px);
+}
+
+.service-hover-card button i,
+#services .bg-white button i {
+  transition: transform 0.3s ease;
+}
+
+/* Add subtle pulse effect to the service cards on hover */
+@keyframes service-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(10, 36, 99, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(10, 36, 99, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(10, 36, 99, 0);
+  }
+}
+
+.service-hover-card:hover {
+  animation: service-pulse 1.5s infinite;
+}
+
+/* Client image animation */
+.testimonial-card .client-image {
+  transition: all 0.5s ease;
+}
+
+.testimonial-card-animated:hover .client-image {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* Make sure hover effects apply to all industry cards including the source card */
+#industries .bg-white, 
+#industries .industry-card-source {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#industries .bg-white:hover,
+#industries .industry-card-source:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure icon animation works on all cards */
+#industries .bg-white .w-16,
+#industries .industry-card-source .w-16 {
+  transition: background-color 0.3s ease;
+}
+
+#industries .bg-white:hover .w-16,
+#industries .industry-card-source:hover .w-16 {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* Logo animation */
+.logo-container {
+position: relative;
+overflow: hidden;
+}
+
+@keyframes morphLogo {
+0% {
+transform: scale(1);
+opacity: 1;
+}
+50% {
+transform: scale(0.8);
+opacity: 0.5;
+}
+100% {
+transform: scale(1);
+opacity: 0;
+}
+}
+
+@keyframes showText {
+0% {
+opacity: 0;
+transform: translateY(10px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.group:hover img {
+animation: morphLogo 0.4s forwards;
+}
+
+.group:hover .logo-text {
+animation: showText 0.3s 0.2s forwards;
+}
