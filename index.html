@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PatentEase - Turn Your Idea Into a Patent</title>
+    <title>LEOSPHERE Innovations - Turn Your Idea Into a Patent</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#1A2942", secondary: "#D4B872" },
+            colors: { primary: "#0a2463", secondary: "#d4af37" },
             borderRadius: {
               none: "0px",
               sm: "4px",
@@ -34,516 +33,949 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Add this in the head section of your HTML if not already present -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      body {
-      font-family: 'Inter', sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      }
-      .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-      .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-      }
-      .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      }
-      .accordion-content.active {
-      max-height: 500px;
-      }
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-      }
-      .custom-checkbox {
-      position: relative;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #D4B872;
-      border-radius: 4px;
-      margin-right: 8px;
-      cursor: pointer;
-      }
-      .custom-checkbox::after {
-      content: "";
-      position: absolute;
-      display: none;
-      left: 6px;
-      top: 2px;
-      width: 5px;
-      height: 10px;
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-      }
-      .custom-checkbox.checked {
-      background-color: #D4B872;
-      }
-      .custom-checkbox.checked::after {
-      display: block;
-      }
-      .custom-radio {
-      position: relative;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #D4B872;
-      border-radius: 50%;
-      margin-right: 8px;
-      cursor: pointer;
-      }
-      .custom-radio::after {
-      content: "";
-      position: absolute;
-      display: none;
-      left: 4px;
-      top: 4px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: #D4B872;
-      }
-      .custom-radio.checked::after {
-      display: block;
-      }
-    </style>
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body class="bg-white">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-      <div
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-primary text-white z-50 shadow-md">
+        <div
+        class="container mx-auto px-6 py-3 flex items-center justify-between"
       >
-        <a
-          data-readdy="true"
-          class="h-16"
-        >
-          <img
-            src="WhatsApp Image 2025-04-11 at 15.41.12_5a160a00.jpg"
-            alt="logo"
-            class="h-full rounded-lg"
-            
-            />
+        <a href="#" class="flex items-center">
+          <img src="logo.jpg" alt="LEOSPHERE Logo" class="h-20 mr-4">
         </a>
         <div class="hidden md:flex items-center space-x-8">
-          <a href="#how-it-works" class="text-gray-600 hover:text-secondary transition-colors">How It Works</a>
-          <a href="#benefits" class="text-gray-600 hover:text-secondary transition-colors">Benefits</a>
-          <a href="#industries" class="text-gray-600 hover:text-secondary transition-colors">Industries</a>
-          <a href="#career" class="text-gray-600 hover:text-secondary transition-colors">Career</a>
-          <a href="#services" class="text-gray-600 hover:text-secondary transition-colors">Services</a>
-          <a href="#faq" class="text-gray-600 hover:text-secondary transition-colors">FAQ</a>
-          <a href="#contact" class="bg-secondary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap">Get Started</a>
+          <a
+            href="#LEOSPHERE-Meaning"
+            class="text-sm hover:text-secondary transition"
+            >Who are we</a
+          >
+          <a href="#benefits" class="text-sm hover:text-secondary transition"
+            >Benefits</a
+          >
+          <a href="#industries" class="text-sm hover:text-secondary transition"
+            >Industries</a
+          >
+          <a href="#services" class="text-sm hover:text-secondary transition"
+            >Services</a
+          >
+          <a href="#faq" class="text-sm hover:text-secondary transition">FAQ</a>
+          <a href="#contact" class="text-sm hover:text-secondary transition"
+            ></a
+          >
         </div>
-        
-        <button class="md:hidden w-10 h-10 flex items-center justify-center">
-          <i class="ri-menu-line text-primary text-2xl"></i>
+        <button
+          class="hidden md:block bg-secondary text-primary px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap"
+        >
+          Get Started
         </button>
+        <div
+          class="md:hidden w-8 h-8 flex items-center justify-center"
+          id="mobile-menu-button"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden bg-primary" id="mobile-menu">
+        <div class="px-6 py-4 space-y-4">
+          <a
+            href="#how-it-works"
+            class="block text-sm hover:text-secondary transition"
+            >How It Works</a
+          >
+          <a
+            href="#benefits"
+            class="block text-sm hover:text-secondary transition"
+            >Benefits</a
+          >
+          <a
+            href="#industries"
+            class="block text-sm hover:text-secondary transition"
+            >Industries</a
+          >
+          <a
+            href="#services"
+            class="block text-sm hover:text-secondary transition"
+            >Services</a
+          >
+          <a href="#faq" class="block text-sm hover:text-secondary transition"
+            >FAQ</a
+          >
+          <a
+            href="#contact"
+            class="block text-sm hover:text-secondary transition"
+            >Contact</a
+          >
+          <button
+            class="w-full bg-secondary text-primary px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
     </nav>
     <!-- Hero Section -->
     <section
-      class="relative min-h-screen flex items-center overflow-hidden"
-      style="background-image: url('https://readdy.ai/api/search-image?query=A%20professional%20legal%20office%20setting%20with%20a%20modern%2C%20minimalist%20design.%20The%20left%20side%20has%20a%20clean%2C%20white%20background%20that%20gradually%20transitions%20to%20the%20right%20side%20showing%20abstract%20legal%20documents%2C%20patents%2C%20and%20tech%20elements.%20The%20image%20has%20a%20navy%20blue%20and%20gold%20color%20scheme%20with%20soft%20lighting.%20The%20transition%20between%20the%20white%20space%20and%20the%20imagery%20must%20be%20subtle%20and%20natural.&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;"
+      class="pt-24 w-full relative"
+      style="background-image: url('https://readdy.ai/api/search-image?query=A%20modern%20abstract%20tech%20legal%20background%20with%20subtle%20navy%20blue%20gradient%20on%20the%20right%20side%20and%20clean%20white%20space%20on%20the%20left%2C%20showing%20abstract%20digital%20connections%2C%20patent%20documents%2C%20and%20tech%20elements.%20Perfect%20for%20a%20legal%20tech%20company%20hero%20section%20with%20smooth%20transition%20between%20white%20and%20blue&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;"
     >
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/50"
-      ></div>
-      <div class="container mx-auto px-6 relative py-32">
-        <div class="max-w-3xl">
-          <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight"
-          >
-            Turn Your Idea Into a Patent —
-            <span id="changing-word">Effortlessly</span>
-          </h1>
-          <style>
-            #changing-word {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            }
-            #changing-word.fade {
-            opacity: 0;
-            }
-          </style>
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const words = [
-                "Effortlessly",
-                "Confidently",
-                "Professionally",
-                "Securely",
-                "Seamlessly",
-              ];
-              const wordElement = document.getElementById("changing-word");
-              let currentIndex = 0;
-              function changeWord() {
-                wordElement.classList.add("fade");
-                setTimeout(() => {
-                  currentIndex = (currentIndex + 1) % words.length;
-                  wordElement.textContent = words[currentIndex];
-                  wordElement.classList.remove("fade");
-                }, 500);
-              }
-              setInterval(changeWord, 2000);
-            });
-          </script>
-          <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-            We help individuals and startups protect their ideas through expert
-            patent filing. Our streamlined process makes securing your
-            intellectual property simpler than ever before.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#contact"
-              class="bg-secondary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors text-center whitespace-nowrap"
-              >Secure My Idea</a
+      <div class="container mx-auto px-6 py-24 w-full">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="w-full md:w-3/5 text-left z-10">
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4"
             >
-            <a
-              href="#how-it-works"
-              class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors text-center whitespace-nowrap"
-              >Learn More</a
-            >
-          </div>
-        </div>
-      </div>
-      <div
-        class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce"
-      >
-        <i class="ri-arrow-down-line text-primary text-2xl"></i>
-      </div>
-    </section>
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            How It Works
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Our streamlined process makes patent filing accessible to everyone,
-            from individual inventors to growing startups.
-          </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="relative fade-in">
-            <div class="flex flex-col items-center text-center">
-              <div
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
-              >
-                <span class="text-secondary font-bold text-xl">1</span>
+              Turn Your Idea Into a Patent –
+              <div class="word-carousel">
+                <div class="visible">Effortlessly</div>
+                <div>Securely</div>
+                <div>Confidently</div>
+                <div>Professionally</div>
               </div>
-              <h3 class="text-xl font-semibold text-primary mb-3">
-                Submit Your Idea
-              </h3>
-              <p class="text-gray-600">
-                Describe your innovation in simple terms. No technical jargon
-                required — we'll handle the details.
-              </p>
-            </div>
-            <div
-              class="hidden lg:block absolute top-8 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300 -z-10"
-            ></div>
-          </div>
-          <div class="relative fade-in">
-            <div class="flex flex-col items-center text-center">
-              <div
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
+            </h1>
+            <p class="text-lg text-gray-700 mb-8 max-w-xl">
+              We guide innovators through the complex patent process with expert
+              support, ensuring your intellectual property is protected every
+              step of the way.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="bg-secondary text-primary px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap"
               >
-                <span class="text-secondary font-bold text-xl">2</span>
-              </div>
-              <h3 class="text-xl font-semibold text-primary mb-3">
-                Expert Review
-              </h3>
-              <p class="text-gray-600">
-                Our patent attorneys analyze your idea for patentability and
-                provide strategic guidance.
-              </p>
-            </div>
-            <div
-              class="hidden lg:block absolute top-8 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300 -z-10"
-            ></div>
-          </div>
-          <div class="relative fade-in">
-            <div class="flex flex-col items-center text-center">
-              <div
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
-              >
-                <span class="text-secondary font-bold text-xl">3</span>
-              </div>
-              <h3 class="text-xl font-semibold text-primary mb-3">
-                Draft & File
-              </h3>
-              <p class="text-gray-600">
-                We prepare comprehensive patent documentation and file with the
-                appropriate patent offices.
-              </p>
-            </div>
-            <div
-              class="hidden lg:block absolute top-8 left-full w-full h-0.5 border-t-2 border-dashed border-gray-300 -z-10"
-            ></div>
-          </div>
-          <div class="fade-in">
-            <div class="flex flex-col items-center text-center">
-              <div
-                class="w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 mb-6"
-              >
-                <span class="text-secondary font-bold text-xl">4</span>
-              </div>
-              <h3 class="text-xl font-semibold text-primary mb-3">
-                Track Your Patent
-              </h3>
-              <p class="text-gray-600">
-                Monitor your application status through our intuitive dashboard
-                as it progresses.
-              </p>
+                Secure My Idea
+              </button>
+             
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-20 bg-white">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Why Choose Us
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Combining legal expertise with cutting-edge technology to transform
-            your innovative ideas into protected intellectual property.
-          </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
-        <div
-          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+    <!-- LEOSPHERE Meaning Section -->
+<section id="LEOSPHERE-Meaning" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-primary mb-4">
+        What LEOSPHERE Stands For
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Our name embodies our mission and values in the intellectual property
+        landscape.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a
+          href="/leadership"
+          class="meaning-card left-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
         >
+          <div class="text-4xl font-bold text-secondary mb-2">L</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Leadership</h3>
+          <p class="text-gray-600">
+            Guiding innovators with industry-leading expertise and vision.
+          </p>
+        </a>
+        <a
+          href="/empowerment"
+          class="meaning-card middle-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">E</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Empowerment</h3>
+          <p class="text-gray-600">
+            Enabling creators to protect and profit from their intellectual
+            property.
+          </p>
+        </a>
+        <a
+          href="/originality"
+          class="meaning-card right-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">O</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Originality</h3>
+          <p class="text-gray-600">
+            Celebrating and protecting novel ideas that push boundaries.
+          </p>
+        </a>
+        <a
+          href="/startups"
+          class="meaning-card left-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">S</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Startups</h3>
+          <p class="text-gray-600">
+            Supporting emerging businesses with tailored IP strategies.
+          </p>
+        </a>
+        <a
+          href="/patents"
+          class="meaning-card middle-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">P</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Patents</h3>
+          <p class="text-gray-600">
+            Specializing in comprehensive patent protection services.
+          </p>
+        </a>
+        <a
+          href="/high-impact-research"
+          class="meaning-card right-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">H</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            High-Impact Research
+          </h3>
+          <p class="text-gray-600">
+            Transforming groundbreaking research into protected intellectual
+            assets.
+          </p>
+        </a>
+        <a
+          href="/events"
+          class="meaning-card left-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">E</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Events</h3>
+          <p class="text-gray-600">
+            Hosting educational workshops on IP protection and innovation.
+          </p>
+        </a>
+        <a
+          href="/rankings"
+          class="meaning-card middle-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">R</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Rankings</h3>
+          <p class="text-gray-600">
+            Consistently rated among top IP service providers nationally.
+          </p>
+        </a>
+        <a
+          href="/excellence"
+          class="meaning-card right-enter bg-white shadow-md rounded p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+        >
+          <div class="text-4xl font-bold text-secondary mb-2">E</div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Excellence in Education
+          </h3>
+          <p class="text-gray-600">
+            Providing resources to help innovators understand IP protection.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+    <!-- Benefits Section -->
+<section id="benefits" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-primary mb-4">
+        Why Choose LEOSPHERE
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        We offer comprehensive patent services with unmatched benefits for
+        innovators.
+      </p>
+      <div class="benefits-container relative" style="min-height: 400px;">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
           >
             <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
             >
-              <i class="ri-shield-keyhole-line text-secondary text-2xl"></i>
+              <i class="ri-lock-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
+            <h3 class="text-xl font-semibold text-primary mb-2">
               Confidentiality
             </h3>
-            <p class="text-gray-600">Free NDA protection for your idea.</p>
+            <p class="text-gray-600 brief-content">
+              Military-grade security for your ideas.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Your innovative ideas are safeguarded with state-of-the-art
+                security measures:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>
+                  • Military-grade 256-bit AES encryption for all digital
+                  communications
+                </li>
+                <li>
+                  • Comprehensive NDAs with liquidated damages clauses before
+                  any consultation
+                </li>
+                <li>
+                  • ISO 27001 certified secure data centers with 24/7
+                  biometric monitoring
+                </li>
+                <li>
+                  • Role-based access control with multi-factor authentication
+                </li>
+                <li>
+                  • Regular third-party security audits and penetration
+                  testing
+                </li>
+                <li>• Secure client portal with end-to-end encryption</li>
+                <li>
+                  • Physical security measures including CCTV and access logs
+                </li>
+                <li>• Data backup in multiple geographic locations</li>
+                <li>
+                  • Compliance with GDPR and Indian data protection
+                  regulations
+                </li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Our Security Certifications
+                </h4>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="flex items-center">
+                    <i class="ri-shield-check-line text-primary mr-2"></i>
+                    <span class="text-sm">ISO 27001:2013</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-shield-check-line text-primary mr-2"></i>
+                    <span class="text-sm">SOC 2 Type II</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-shield-check-line text-primary mr-2"></i>
+                    <span class="text-sm">HIPAA Compliant</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-shield-check-line text-primary mr-2"></i>
+                    <span class="text-sm">GDPR Ready</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">
+                We understand the critical nature of your intellectual
+                property and maintain the highest standards of confidentiality
+                throughout our engagement. Our security measures are regularly
+                updated to stay ahead of emerging threats.
+              </p>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i
+                    class="ri-customer-service-2-line text-secondary mr-2"
+                  ></i>
+                  <span class="text-sm font-medium"
+                    >24/7 Security Support</span
+                  >
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  Contact Security Team
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
           </div>
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
           >
             <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
             >
-              <i class="ri-team-line text-secondary text-2xl"></i>
+              <i class="ri-user-star-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
+            <h3 class="text-xl font-semibold text-primary mb-2">
               Expert Guidance
             </h3>
-            <p class="text-gray-600">
-              Work with experienced patent professionals.
+            <p class="text-gray-600 brief-content">
+              Work with specialized patent attorneys with technical
+              backgrounds in your specific field.
             </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our team of expert patent attorneys combines deep technical
+                knowledge with extensive legal experience:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>
+                  • Advanced degrees in engineering, computer science,
+                  biotechnology, and other technical fields
+                </li>
+                <li>• Average 15+ years of patent prosecution experience</li>
+                <li>
+                  • Registered patent attorneys in multiple jurisdictions
+                </li>
+                <li>• Former patent office examiners on staff</li>
+                <li>• Industry-specific expertise teams</li>
+                <li>• Regular training on emerging technologies</li>
+                <li>• Published authors in technical and legal journals</li>
+                <li>• Speakers at international IP conferences</li>
+              </ul>
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-primary/5 p-4 rounded">
+                  <h4 class="font-semibold text-primary mb-2">
+                    Technical Expertise
+                  </h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• Artificial Intelligence</li>
+                    <li>• Biotechnology</li>
+                    <li>• Quantum Computing</li>
+                    <li>• Renewable Energy</li>
+                    <li>• Medical Devices</li>
+                  </ul>
+                </div>
+                <div class="bg-primary/5 p-4 rounded">
+                  <h4 class="font-semibold text-primary mb-2">
+                    Industry Experience
+                  </h4>
+                  <ul class="text-sm text-gray-600 space-y-1">
+                    <li>• Fortune 500 Companies</li>
+                    <li>• Tech Startups</li>
+                    <li>• Research Institutions</li>
+                    <li>• Healthcare Organizations</li>
+                    <li>• Government Agencies</li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-calendar-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium"
+                    >Schedule a Consultation</span
+                  >
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  Book Now
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
           </div>
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
           >
             <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
             >
-              <i class="ri-lightbulb-line text-secondary text-2xl"></i>
+              <i class="ri-price-tag-3-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              No Idea Too Early
-            </h3>
-            <p class="text-gray-600">We accept raw concepts and sketches.</p>
-          </div>
-          <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
-          >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-service-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              End-to-End Service
-            </h3>
-            <p class="text-gray-600">From consultation to filing.</p>
-          </div>
-          <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
-          >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-customer-service-2-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Real Support
-            </h3>
-            <p class="text-gray-600">Dedicated patent consultants.</p>
-          </div>
-          <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
-          >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i
-                class="ri-money-dollar-circle-line text-secondary text-2xl"
-              ></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
+            <h3 class="text-xl font-semibold text-primary mb-2">
               Transparent Pricing
             </h3>
-            <p class="text-gray-600">Flat fees, no hidden costs.</p>
+            <p class="text-gray-600 brief-content">
+              Clear, upfront pricing with no hidden fees and flexible payment
+              options for startups.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our pricing structure is designed to be completely transparent and accessible:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>• Detailed cost breakdown for every service</li>
+                <li>• No hidden fees or surprise charges</li>
+                <li>• Flexible payment plans for startups and small businesses</li>
+                <li>• Milestone-based payment options</li>
+                <li>• Volume discounts for multiple filings</li>
+                <li>• Fixed-fee packages for common patent services</li>
+                <li>• Free initial consultation and cost estimate</li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Pricing Options
+                </h4>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Fixed Fee Services</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Hourly Billing</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Subscription Plans</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Success-Based Fees</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-price-tag-3-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium">View Pricing Guide</span>
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  Download PDF
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
           </div>
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
           >
             <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
             >
-              <i class="ri-timer-flash-line text-secondary text-2xl"></i>
+              <i class="ri-time-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Fast Turnaround
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Accelerated Process
             </h3>
-            <p class="text-gray-600">Quick filing process.</p>
+            <p class="text-gray-600 brief-content">
+              Streamlined procedures that reduce patent filing time by up to
+              40% compared to industry standards.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our accelerated patent process leverages technology and expertise to save you valuable time:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>• Proprietary AI-assisted drafting tools</li>
+                <li>• Streamlined internal review procedures</li>
+                <li>• Expedited filing strategies</li>
+                <li>• Pre-filing examiner consultations when available</li>
+                <li>• Parallel processing of multiple application components</li>
+                <li>• Strategic use of Patent Prosecution Highway</li>
+                <li>• Prioritized examination options</li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Time Savings
+                </h4>
+                <div class="grid grid-cols-1 gap-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm">Initial Draft</span>
+                    <span class="text-sm font-medium">40% faster</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm">Filing Preparation</span>
+                    <span class="text-sm font-medium">35% faster</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm">Office Action Response</span>
+                    <span class="text-sm font-medium">50% faster</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-time-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium">Process Timeline</span>
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  View Details
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
           </div>
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 hover:shadow-xl fade-in border border-gray-100"
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
           >
             <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
             >
-              <i class="ri-global-line text-secondary text-2xl"></i>
+              <i class="ri-global-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
+            <h3 class="text-xl font-semibold text-primary mb-2">
               Global Protection
             </h3>
-            <p class="text-gray-600">International filing options.</p>
+            <p class="text-gray-600 brief-content">
+              Comprehensive international filing strategies to secure your
+              innovation worldwide.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our global protection strategies ensure your innovations are secured across international markets:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>• Patent Cooperation Treaty (PCT) expertise</li>
+                <li>• Strategic filing in key global markets</li>
+                <li>• Network of trusted international associates</li>
+                <li>• Multi-jurisdictional patent portfolio management</li>
+                <li>• Translation services for international filings</li>
+                <li>• Regional patent application strategies (EU, ARIPO, etc.)</li>
+                <li>• International patent enforcement support</li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Global Coverage
+                </h4>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">North America</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Europe</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Asia</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Australia</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">South America</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-check-line text-primary mr-2"></i>
+                    <span class="text-sm">Africa</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-global-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium">International Strategy</span>
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  Explore Options
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
+          >
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="ri-file-search-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Thorough Research
+            </h3>
+            <p class="text-gray-600 brief-content">
+              In-depth prior art searches to strengthen your patent
+              application and identify potential obstacles.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our comprehensive research approach ensures your patent application stands on solid ground:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>• Advanced AI-powered patent database search tools</li>
+                <li>• Access to global patent and non-patent literature</li>
+                <li>• Technical field experts for specialized searches</li>
+                <li>• Competitive landscape analysis</li>
+                <li>• Freedom-to-operate assessments</li>
+                <li>• Patentability evaluations</li>
+                <li>• Detailed search reports with strategic recommendations</li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Research Capabilities
+                </h4>
+                <div class="grid grid-cols-1 gap-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm">Patent Databases</span>
+                    <span class="text-sm font-medium">100+ global sources</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm">Technical Journals</span>
+                    <span class="text-sm font-medium">50,000+ publications</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm">Search Accuracy</span>
+                    <span class="text-sm font-medium">99.7% precision</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-file-search-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium">Research Services</span>
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  Request Search
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
+          >
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="ri-customer-service-2-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Dedicated Support
+            </h3>
+            <p class="text-gray-600 brief-content">
+              Personal case manager available to answer questions throughout
+              the entire patent process.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our client-centered approach ensures you receive personalized attention throughout your patent journey:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>• Dedicated case manager assigned to your project</li>
+                <li>• Direct access to your patent attorney</li>
+                <li>• Regular progress updates and milestone notifications</li>
+                <li>• 24/7 client portal access to view case status</li>
+                <li>• Prompt response to all inquiries (within 24 hours)</li>
+                <li>• Educational resources tailored to your innovation</li>
+                <li>• Post-filing support and maintenance reminders</li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Support Channels
+                </h4>
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="flex items-center">
+                    <i class="ri-phone-line text-primary mr-2"></i>
+                    <span class="text-sm">Direct Phone Line</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-mail-line text-primary mr-2"></i>
+                    <span class="text-sm">Dedicated Email</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-message-2-line text-primary mr-2"></i>
+                    <span class="text-sm">Secure Messaging</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="ri-video-chat-line text-primary mr-2"></i>
+                    <span class="text-sm">Video Consultations</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-customer-service-2-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium">Client Support</span>
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  Contact Support
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="benefit-card benefit-card-animate bg-white shadow-md rounded p-6 cursor-pointer"
+          >
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+            >
+              <i class="ri-line-chart-line ri-xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-2">
+              Success Rate
+            </h3>
+            <p class="text-gray-600 brief-content">
+              93% first-time patent approval rate, significantly higher than
+              the industry average of 65%.
+            </p>
+            <div class="detailed-content hidden">
+              <p class="text-gray-600 mb-4">
+                Our exceptional success rates are the result of our meticulous approach to patent prosecution:
+              </p>
+              <ul class="text-gray-600 space-y-2 mb-4">
+                <li>• 93% first-time patent approval rate (vs. 65% industry average)</li>
+                <li>• Strategic claim drafting to maximize protection scope</li>
+                <li>• Proactive examiner interviews to address concerns</li>
+                <li>• Comprehensive prior art analysis before filing</li>
+                <li>• Experienced prosecution team with examiner insights</li>
+                <li>• Data-driven approach to application strategy</li>
+                <li>• Continuous improvement based on prosecution analytics</li>
+              </ul>
+              <div class="bg-primary/5 p-4 rounded mb-4">
+                <h4 class="font-semibold text-primary mb-2">
+                  Success Metrics
+                </h4>
+                <div class="space-y-3">
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="text-sm">First-Time Approval</span>
+                      <span class="text-sm font-medium">93%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div class="bg-primary h-2 rounded-full" style="width: 93%"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1">
+                      <span class="text-sm">Industry Average</span>
+                      <span class="text-sm font-medium">65%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div class="bg-gray-400 h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between bg-secondary/10 p-4 rounded"
+              >
+                <div class="flex items-center">
+                  <i class="ri-line-chart-line text-secondary mr-2"></i>
+                  <span class="text-sm font-medium">Success Stories</span>
+                </div>
+                <button
+                  class="text-primary hover:text-secondary transition flex items-center text-sm !rounded-button whitespace-nowrap"
+                >
+                  View Case Studies
+                  <i class="ri-arrow-right-line ml-1"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="benefits-overlay hidden fixed inset-0 bg-black bg-opacity-50 z-10"></div>
       </div>
-    </section>
-    <!-- Secure Idea Submission Form -->
-    <section id="contact" class="min-h-screen flex items-center bg-primary">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Secure Your Idea Today
-          </h2>
-          <p class="text-gray-300 max-w-2xl mx-auto">
-            Submit your idea securely under our automatic NDA protection. Our
-            experts will review your submission and contact you within 24 hours.
+    </div>
+  </section>
+    <!-- Idea Submission Form -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-3xl font-bold text-primary mb-2">Submit Your Idea</h2>
+          <p class="text-gray-600 mb-8">
+            Take the first step toward protecting your innovation. All
+            submissions are secured with enterprise-grade encryption.
           </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
-        <div
-          class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-10 fade-in"
-        >
           <form>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label for="fullName" class="block text-gray-700 mb-2"
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
                   >Full Name</label
                 >
                 <input
                   type="text"
-                  id="fullName"
-                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="John Smith"
                 />
               </div>
               <div>
-                <label for="email" class="block text-gray-700 mb-2"
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
                   >Email Address</label
                 >
                 <input
                   type="email"
                   id="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="john@example.com"
                 />
               </div>
             </div>
             <div class="mb-6">
-              <label for="ideaTitle" class="block text-gray-700 mb-2"
-                >Title of Idea</label
+              <label
+                for="idea-title"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Idea Title</label
               >
               <input
                 type="text"
-                id="ideaTitle"
-                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="e.g. Smart Home Energy Management System"
+                id="idea-title"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="Briefly describe your innovation"
               />
             </div>
             <div class="mb-6">
-              <label for="ideaDescription" class="block text-gray-700 mb-2"
-                >Description of Idea</label
+              <label
+                for="description"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Description</label
               >
               <textarea
-                id="ideaDescription"
-                rows="5"
-                class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="Describe your idea in detail. Include the problem it solves and how it works."
+                id="description"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                placeholder="Provide details about your idea, how it works, and what problem it solves"
               ></textarea>
             </div>
-            <div class="mb-8">
-              <label class="block text-gray-700 mb-2"
-                >Upload File (optional)</label
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Upload Files (optional)</label
               >
               <div
-                class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center"
+                class="border-2 border-dashed border-gray-300 rounded p-6 text-center"
               >
                 <div
-                  class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 mx-auto mb-4"
+                  class="w-12 h-12 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-2"
                 >
-                  <i class="ri-upload-2-line text-gray-500 text-2xl"></i>
+                  <i class="ri-upload-2-line ri-xl text-gray-500"></i>
                 </div>
-                <p class="text-gray-500 mb-2">Drag and drop files here or</p>
+                <p class="text-gray-500 mb-2">
+                  Drag and drop files here, or click to browse
+                </p>
+                <p class="text-xs text-gray-400">
+                  Accepts PDF, DOC, JPG, PNG (Max 10MB)
+                </p>
+                <input type="file" class="hidden" id="file-upload" />
                 <button
                   type="button"
-                  class="text-secondary font-medium hover:underline !rounded-button whitespace-nowrap"
+                  onclick="document.getElementById('file-upload').click()"
+                  class="mt-4 px-4 py-2 bg-gray-200 text-gray-700 rounded !rounded-button hover:bg-gray-300 transition whitespace-nowrap"
                 >
-                  Browse Files
+                  Select Files
                 </button>
-                <input type="file" class="hidden" />
-                <p class="text-xs text-gray-500 mt-2">
-                  Supported formats: PDF, DOC, JPG, PNG (Max 10MB)
-                </p>
               </div>
             </div>
-            <div class="flex items-center mb-8">
-              <div class="custom-checkbox" id="ndaCheckbox"></div>
-              <label for="ndaCheckbox" class="text-gray-700"
-                >I agree to submit my idea under NDA protection</label
+            <div class="mb-8 flex items-start">
+              <input type="checkbox" id="nda" class="mt-1 mr-3" />
+              <label for="nda" class="text-sm text-gray-600"
+                >I agree to the
+                <a href="#" class="text-primary hover:underline"
+                  >Non-Disclosure Agreement</a
+                >
+                and understand that my submission will be kept
+                confidential.</label
               >
             </div>
             <button
               type="submit"
-              class="w-full bg-secondary text-white py-4 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              class="w-full bg-secondary text-primary font-medium py-3 !rounded-button hover:bg-opacity-90 transition flex items-center justify-center whitespace-nowrap"
             >
+              <i class="ri-shield-check-line ri-lg mr-2"></i>
               Submit Securely
             </button>
           </form>
@@ -551,558 +983,577 @@
       </div>
     </section>
     <!-- Testimonials Section -->
-    <section class="min-h-screen flex items-center bg-gray-50">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            What Our Clients Say
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Hear from inventors and entrepreneurs who've successfully patented
-            their ideas with our help.
-          </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-primary mb-4">
+          What Our Clients Say
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Hear from innovators who successfully secured their intellectual
+          property with our help.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white rounded-lg shadow-md p-8 fade-in">
-            <p class="text-gray-600 italic mb-6">
-              "The team made the patent process incredibly straightforward.
-              Within 6 months, we had our provisional patent approved, which was
-              crucial for our funding round."
-            </p>
-            <div class="flex mt-4">
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
+          <div
+            class="bg-white shadow-md rounded-lg p-6 border-t-4 border-secondary"
+          >
+            <div class="flex items-center mb-4">
+            </div>
+            <div class="text-gray-600 mb-4">
+              <i
+                class="ri-double-quotes-l text-secondary opacity-30 text-4xl absolute -ml-2 -mt-2"
+              ></i>
+              <p class="relative z-10">
+                LEOSPHERE guided me through patenting my research in quantum
+                computing. Their technical expertise was impressive, and they
+                secured international protection faster than I expected.
+              </p>
+            </div>
+            <div class="flex">
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
               <i class="ri-star-fill text-secondary"></i>
             </div>
           </div>
-          <div class="bg-white rounded-lg shadow-md p-8 fade-in">
-            <p class="text-gray-600 italic mb-6">
-              "As a first-time inventor, I was intimidated by the patent
-              process. Their team guided me through every step, making it
-              painless and affordable."
-            </p>
-            <div class="flex mt-4">
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary"></i>
+          <div
+            class="bg-white shadow-md rounded-lg p-6 border-t-4 border-secondary"
+          >
+            <div class="flex items-center mb-4">
+              
             </div>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-8 fade-in">
-            <p class="text-gray-600 italic mb-6">
-              "We've filed 5 patents through their platform. The flat fee
-              structure saved us thousands compared to traditional law firms,
-              with the same quality results."
-            </p>
-            <div class="flex mt-4">
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
-              <i class="ri-star-fill text-secondary mr-1"></i>
+            <div class="text-gray-600 mb-4">
+              <i
+                class="ri-double-quotes-l text-secondary opacity-30 text-4xl absolute -ml-2 -mt-2"
+              ></i>
+              <p class="relative z-10">
+                As a first-time entrepreneur, the patent process seemed
+                overwhelming. LEOSPHERE made it simple and affordable. Their
+                team's strategic advice helped us secure funding with our
+                protected IP.
+              </p>
+            </div>
+            <div class="flex">
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
               <i class="ri-star-half-fill text-secondary"></i>
+            </div>
+          </div>
+          <div
+            class="bg-white shadow-md rounded-lg p-6 border-t-4 border-secondary"
+          >
+           
+            <div class="text-gray-600 mb-4">
+              <i
+                class="ri-double-quotes-l text-secondary opacity-30 text-4xl absolute -ml-2 -mt-2"
+              ></i>
+              <p class="relative z-10">
+                We had a complex medical device that needed robust protection.
+                LEOSPHERE's attorneys had the perfect blend of legal and
+                technical knowledge to craft comprehensive patent claims.
+              </p>
+            </div>
+            <div class="flex">
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
+              <i class="ri-star-fill text-secondary"></i>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Industries Section -->
-    <section id="industries" class="py-20 bg-white">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Industries
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Supporting innovation and research in education.
+<section id="industries" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-primary mb-4">
+        Industries We Serve
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        With specialized expertise across multiple sectors, we provide
+        tailored patent services for various industries.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <a href="/educational-institutions.html" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
+          <div
+            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4"
+          >
+            <i class="ri-building-4-line ri-2x text-primary"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Educational Institutions
+          </h3>
+          <p class="text-gray-600">
+            Helping universities and research institutions protect and
+            commercialize their innovations with specialized academic IP
+            strategies.
           </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
-        <div class="flex justify-center">
+        </a>
+        <a href="/biotechnology.html" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100 max-w-sm"
+            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4"
           >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-graduation-cap-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Colleges
-            </h3>
-            <p class="text-gray-600">
-              Illuminating the future of education through bold, student-led innovation.
-            </p>
+            <i class="ri-microscope-line ri-2x text-primary"></i>
           </div>
-        </div>
-        
-        </div>
-      </div>
-    </section>
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Our Services
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Comprehensive patent and intellectual property services for your
-            innovation journey.
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Biotechnology
+          </h3>
+          <p class="text-gray-600">
+            Securing protection for complex biological innovations with
+            attorneys specialized in life sciences and regulatory
+            requirements.
           </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </a>
+        <a href="/information-technology.html" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4"
           >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-file-search-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Patent Search
-            </h3>
-            <p class="text-gray-600">
-              Comprehensive prior art search and patentability assessment to
-              evaluate your invention.
-            </p>
+            <i class="ri-cpu-line ri-2x text-primary"></i>
           </div>
-          <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
-          >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-draft-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Patent Drafting
-            </h3>
-            <p class="text-gray-600">
-              Expert preparation of patent applications with comprehensive
-              claims and illustrations.
-            </p>
-          </div>
-          <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
-          >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-global-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Global Filing
-            </h3>
-            <p class="text-gray-600">
-              International patent filing and prosecution services in major
-              jurisdictions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Careers Section -->
-    <section id="career" class="py-20 bg-white">
-
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Career 
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Join our team and help shape the future of innovation protection.
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Information Technology
+          </h3>
+          <p class="text-gray-600">
+            Navigating the complex landscape of software and hardware patents
+            with technical expertise in computing innovations.
           </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </a>
+        <a href="/healthcare.html" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4"
           >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-rocket-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Startup Specialists
-            </h3>
-            <p class="text-gray-600">
-              Help startups protect and commercialize their innovations.
-            </p>
+            <i class="ri-heart-pulse-line ri-2x text-primary"></i>
           </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Healthcare</h3>
+          <p class="text-gray-600">
+            Protecting medical devices, pharmaceuticals, and healthcare
+            technologies with specialized regulatory knowledge.
+          </p>
+        </a>
+        <a href="/startups.html" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4"
           >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-shield-star-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Patent Attorneys
-            </h3>
-            <p class="text-gray-600">
-              Join our team of experienced patent professionals.
-            </p>
+            <i class="ri-rocket-line ri-2x text-primary"></i>
           </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Startups</h3>
+          <p class="text-gray-600">
+            Affordable, strategic IP protection for emerging companies with
+            scalable solutions that grow with your business.
+          </p>
+        </a>
+        <a href="/clean-technology.html" class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300">
           <div
-            class="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:scale-105 fade-in border border-gray-100"
+            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4"
           >
-            <div
-              class="w-14 h-14 flex items-center justify-center rounded-full bg-secondary bg-opacity-10 mb-6"
-            >
-              <i class="ri-exchange-funds-line text-secondary text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-primary mb-3">
-              Tech Transfer
-            </h3>
-            <p class="text-gray-600">
-              Support technology commercialization and licensing initiatives.
-            </p>
+            <i class="ri-leaf-line ri-2x text-primary"></i>
           </div>
-        </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Clean Technology
+          </h3>
+          <p class="text-gray-600">
+            Supporting sustainable innovations with specialized knowledge in
+            environmental technologies and green patents.
+          </p>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+              <h2 class="text-3xl font-bold text-center text-primary mb-4">
+                Our Services
+              </h2>
+              <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Comprehensive intellectual property services tailored to protect your
+                innovations.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="/innovation-strategy.html" class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="ri-lightbulb-line ri-3x text-primary"></i>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
+                      Innovation Strategy
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                      Comprehensive innovation consulting to transform your ideas into
+                      market-ready solutions with full IP protection.
+                    </p>
+                    <div class="flex justify-between items-center">
+                    </div>
+                  </div>
+                </a>
+                <a href="/ip-protection-suite.html" class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="ri-shield-keyhole-line ri-3x text-primary"></i>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
+                      IP Protection Suite
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                      Complete intellectual property protection including patents,
+                      trademarks, copyrights, and trade secrets.
+                    </p>
+                    <div class="flex justify-between items-center">
+                    </div>
+                  </div>
+                </a>
+                <a href="/global-market-entry.html" class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="ri-global-line ri-3x text-primary"></i>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
+                      Global Market Entry
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                      Strategic international expansion support with comprehensive IP
+                      protection and market analysis.
+                    </p>
+                    <div class="flex justify-between items-center">
+                      
+                    </div>
+                  </div>
+                </a>
+                <a href="/portfolio-development.html" class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="ri-funds-box-line ri-3x text-primary"></i>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
+                      Portfolio Development
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                      Strategic asset development and management to maximize your
+                      intellectual property value.
+                    </p>
+                    <div class="flex justify-between items-center">
+                      
+                     
+                    </div>
+                  </div>
+                </a>
+                <a href="/business-consulting.html" class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="ri-team-line ri-3x text-primary"></i>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
+                      Business Consulting
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                      Expert guidance on business strategy, market positioning, and
+                      innovation commercialization.
+                    </p>
+                    <div class="flex justify-between items-center">
+                     
+                    </div>
+                  </div>
+                </a>
+                <a href="/startup-acceleration.html" class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div class="h-48 bg-primary/10 flex items-center justify-center">
+                    <i class="ri-rocket-line ri-3x text-primary"></i>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold text-primary mb-2">
+                      Startup Acceleration
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                      Comprehensive support package for startups including IP
+                      strategy, business planning, and funding guidance.
+                    </p>
+                    <div class="flex justify-between items-center">
+                     
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
     <!-- FAQ Section -->
-    <section id="faq" class="min-h-screen flex items-center bg-gray-50">
-      <div class="container mx-auto px-6 py-32">
-        <div class="text-center mb-16 fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about our patent filing process.
-          </p>
-          <div class="w-24 h-1 bg-secondary mx-auto mt-6"></div>
-        </div>
+    <section id="faq" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-primary mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Find answers to common questions about patent protection and our
+          services.
+        </p>
         <div class="max-w-3xl mx-auto">
-          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+          <div class="faq-item mb-4 border border-gray-200 rounded">
             <div
-              class="flex justify-between items-center cursor-pointer accordion-header"
+              class="faq-question p-4 flex justify-between items-center cursor-pointer bg-white hover:bg-gray-50"
             >
-              <h3 class="text-lg font-semibold text-primary">
-                How long does the patent process take?
+              <h3 class="font-medium text-primary">
+                How long does the patent process typically take?
               </h3>
-              <div
-                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
-              >
-                <i class="ri-add-line"></i>
-              </div>
+              <i class="ri-add-line text-primary transition-transform"></i>
             </div>
-            <div class="accordion-content mt-4">
-              <p class="text-gray-600">
-                The patent process timeline varies based on the type of
-                protection you choose. A provisional patent can be filed within
-                2-3 days of submission. For a full utility patent, the drafting
-                and filing process typically takes 4-5 days. After filing,
-                USPTO examination can take 1-3 years, though you have patent
-                pending status during this time.
-              </p>
+            <div class="faq-answer bg-gray-50 px-4 overflow-hidden">
+              <div class="py-4 text-gray-600">
+                <p>
+                  The patent process timeline varies by country and technology
+                  field. In India, it typically takes 2-3 years from filing to
+                  grant. Our accelerated processes can sometimes reduce this
+                  timeframe. International patents may take 3-5 years. During
+                  this time, your application receives "patent pending" status,
+                  which provides some protection and market advantage.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+          <div class="faq-item mb-4 border border-gray-200 rounded">
             <div
-              class="flex justify-between items-center cursor-pointer accordion-header"
+              class="faq-question p-4 flex justify-between items-center cursor-pointer bg-white hover:bg-gray-50"
             >
-              <h3 class="text-lg font-semibold text-primary">
-                What's the difference between provisional and full patents?
+              <h3 class="font-medium text-primary">
+                What makes an idea patentable?
               </h3>
-              <div
-                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
-              >
-                <i class="ri-add-line"></i>
-              </div>
+              <i class="ri-add-line text-primary transition-transform"></i>
             </div>
-            <div class="accordion-content mt-4">
-              <p class="text-gray-600">
-                A provisional patent application establishes an early filing
-                date and gives you "patent pending" status for 12 months while
-                you develop your invention. It's less formal and less expensive.
-                A full (non-provisional) utility patent provides complete
-                protection for 20 years and includes formal claims, detailed
-                descriptions, and professional illustrations. Many inventors
-                start with a provisional and then file a full patent before the
-                12-month period expires.
-              </p>
+            <div class="faq-answer bg-gray-50 px-4 overflow-hidden">
+              <div class="py-4 text-gray-600">
+                <p>
+                  For an idea to be patentable, it must meet three primary
+                  criteria: novelty (being new and not previously disclosed),
+                  non-obviousness (not an obvious extension of existing
+                  technology to someone skilled in that field), and utility
+                  (having a practical application). Additionally, the innovation
+                  must fall within patentable subject matter as defined by the
+                  specific country's patent laws.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+          <div class="faq-item mb-4 border border-gray-200 rounded">
             <div
-              class="flex justify-between items-center cursor-pointer accordion-header"
+              class="faq-question p-4 flex justify-between items-center cursor-pointer bg-white hover:bg-gray-50"
             >
-              <h3 class="text-lg font-semibold text-primary">
-                How do you protect my idea during submission?
+              <h3 class="font-medium text-primary">
+                How much does patent protection cost?
               </h3>
-              <div
-                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
-              >
-                <i class="ri-add-line"></i>
-              </div>
+              <i class="ri-add-line text-primary transition-transform"></i>
             </div>
-            <div class="accordion-content mt-4">
-              <p class="text-gray-600">
-                All submissions are automatically protected under our legally
-                binding NDA. Our secure platform uses bank-level encryption, and
-                access to your information is strictly limited to the patent
-                attorneys assigned to your case. We never share your ideas with
-                third parties without your explicit permission.
-              </p>
+            <div class="faq-answer bg-gray-50 px-4 overflow-hidden">
+              <div class="py-4 text-gray-600">
+                <p>
+                  Patent costs vary based on complexity, technology field, and
+                  geographic coverage. In India, a basic patent application
+                  typically costs ₹50,000-₹2,00,000 including government fees
+                  and attorney services. International protection costs more,
+                  with each country adding ₹3,00,000-₹5,00,000 on average. We
+                  offer flexible payment plans for startups and academic
+                  institutions to make protection more accessible.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="mb-6 border-b border-gray-200 pb-6 fade-in">
+          <div class="faq-item mb-4 border border-gray-200 rounded">
             <div
-              class="flex justify-between items-center cursor-pointer accordion-header"
+              class="faq-question p-4 flex justify-between items-center cursor-pointer bg-white hover:bg-gray-50"
             >
-              <h3 class="text-lg font-semibold text-primary">
-                What if my idea isn't patentable?
+              <h3 class="font-medium text-primary">
+                Should I keep my invention secret before filing?
               </h3>
-              <div
-                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
-              >
-                <i class="ri-add-line"></i>
-              </div>
+              <i class="ri-add-line text-primary transition-transform"></i>
             </div>
-            <div class="accordion-content mt-4">
-              <p class="text-gray-600">
-                If our assessment determines your idea may not be patentable in
-                its current form, we'll provide detailed feedback on why and
-                suggest potential modifications that could improve
-                patentability. We may also recommend alternative forms of
-                intellectual property protection, such as trademarks,
-                copyrights, or trade secrets. If we determine your idea is not
-                patentable at all, we offer a partial refund of our service fee.
-              </p>
+            <div class="faq-answer bg-gray-50 px-4 overflow-hidden">
+              <div class="py-4 text-gray-600">
+                <p>
+                  Yes, maintaining confidentiality before filing is crucial.
+                  Public disclosure of your invention before filing can
+                  jeopardize your patent rights in most countries. While India
+                  and the US offer a grace period (12 months in India, 12 months
+                  in the US), many other countries require absolute novelty. We
+                  recommend using NDAs for any necessary disclosures and
+                  consulting with us before sharing your innovation publicly.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="mb-6 fade-in">
+          <div class="faq-item mb-4 border border-gray-200 rounded">
             <div
-              class="flex justify-between items-center cursor-pointer accordion-header"
+              class="faq-question p-4 flex justify-between items-center cursor-pointer bg-white hover:bg-gray-50"
             >
-              <h3 class="text-lg font-semibold text-primary">
-                Do your fees include government filing fees?
+              <h3 class="font-medium text-primary">
+                What's the difference between a patent, trademark, and
+                copyright?
               </h3>
-              <div
-                class="w-8 h-8 flex items-center justify-center text-secondary accordion-icon"
-              >
-                <i class="ri-add-line"></i>
-              </div>
+              <i class="ri-add-line text-primary transition-transform"></i>
             </div>
-            <div class="accordion-content mt-4">
-              <p class="text-gray-600">
-                Our service fees include our legal work, patent drafting, and
-                filing services. USPTO filing fees are additional and vary based
-                on your entity size (small entity, micro-entity, or large
-                entity). We'll provide a clear breakdown of all applicable
-                government fees before filing, and you can pay these directly
-                through our platform. Most individual inventors and startups
-                qualify for reduced fees as small or micro entities.
-              </p>
+            <div class="faq-answer bg-gray-50 px-4 overflow-hidden">
+              <div class="py-4 text-gray-600">
+                <p>
+                  These three protect different aspects of intellectual
+                  property: Patents protect inventions, functional designs, and
+                  processes, typically lasting 20 years. Trademarks protect
+                  brand identifiers like logos and names, and can be renewed
+                  indefinitely with proper use. Copyrights protect original
+                  creative works like books, music, and software code, lasting
+                  for the author's lifetime plus 60 years in India. Many
+                  innovations benefit from a combination of these protections.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Footer -->
-    <footer class="bg-primary text-white">
-      <div class="container mx-auto px-6 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer class="bg-primary text-white pt-16 pb-8">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <a
-              data-readdy="true"
-              class="h-16 mb-6 block"
-              class="h-full rounded-lg"
+              href="#"
+              class="font-['Pacifico'] text-secondary text-3xl mb-4 inline-block"
+              >LEOSPHERE</a
             >
-              <img
-                src="WhatsApp Image 2025-04-11 at 15.41.12_5a160a00.jpg"
-                alt="logo"
-                class="h-full"
-              />
-            </a>
             <p class="text-gray-300 mb-6">
-              We make patent filing accessible to everyone, from individual
-              inventors to growing startups.
+              Empowering innovators to protect their ideas and build the future
+              with confidence.
             </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
           </div>
           <div>
-            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#how-it-works"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >How It Works</a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="#benefits"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >Benefits</a
+                  href="#LEOSPHERE-Meaning"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Services</a
                 >
               </li>
               <li>
                 <a
                   href="#industries"
-                  class="text-gray-300 hover:text-white transition-colors"
+                  class="text-gray-300 hover:text-secondary transition"
                   >Industries</a
                 >
               </li>
+              
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-3">
               <li>
                 <a
-                  href="#career"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >Career</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#faq"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >FAQ</a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Terms of Service</a
                 >
               </li>
               <li>
                 <a
                   href="#"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >Blog</a
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Non-Disclosure Agreement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Cookie Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition"
+                  >Disclaimer</a
                 >
               </li>
             </ul>
           </div>
           <div>
-            <!-- ... existing footer code ... -->
-<div>
-  <h4 class="text-lg font-semibold mb-6">Legal</h4>
-  <ul class="space-y-3">
-    <li>
-      <a
-        href="legal.html#terms"
-        class="text-gray-300 hover:text-white transition-colors"
-        >Terms of Service</a
-      >
-    </li>
-    <li>
-      <a
-        href="legal.html#privacy"
-        class="text-gray-300 hover:text-white transition-colors"
-        >Privacy Policy</a
-      >
-    </li>
-    <li>
-      <a
-        href="legal.html#cookie"
-        class="text-gray-300 hover:text-white transition-colors"
-        >Cookie Policy</a
-      >
-    </li>
-    <li>
-      <a
-        href="legal.html#nda"
-        class="text-gray-300 hover:text-white transition-colors"
-        >NDA Terms</a
-      >
-    </li>
-    <li>
-      <a
-        href="legal.html#refund"
-        class="text-gray-300 hover:text-white transition-colors"
-        >Refund Policy</a
-      >
-    </li>
-  </ul>
-</div>
-<!-- ... rest of footer code ... -->
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+            <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
             <ul class="space-y-3">
               <li class="flex items-start">
-                <i class="ri-map-pin-line mr-3 mt-1"></i>
-                <span class="text-gray-300"
-                  >123 Innovation Way, Suite 400<br />San Francisco, CA
-                  94107</span
-                >
-              </li>
-              <li class="flex items-center">
-                <i class="ri-mail-line mr-3"></i>
-                <a
-                  href="mailto:info@patentease.com"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >leosphereinnovations@gmail.com</a
+                <i class="ri-map-pin-line mt-1 mr-3"></i>
+                <span
+                  >1234 Innovation Park, Tech District, Mumbai 400001,
+                  India</span
                 >
               </li>
               <li class="flex items-center">
                 <i class="ri-phone-line mr-3"></i>
-                <a
-                  href="tel:+18005551234"
-                  class="text-gray-300 hover:text-white transition-colors"
-                  >+1 (800) 555-1234</a
-                >
+                <span>+91 22 1234 5678</span>
+              </li>
+              <li class="flex items-center">
+                <i class="ri-mail-line mr-3"></i>
+                <a href="mailto:leosphereinnovations@gmail.com" class="hover:text-secondary transition">leosphereinnovations@gmail.com</a>
               </li>
             </ul>
+            
+            </div>
           </div>
         </div>
         <div
-          class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+          class="pt-8 border-t border-white/20 text-center text-gray-400 text-sm"
         >
-          <p class="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 PatentEase. All rights reserved.
+          <p>
+            &copy; 2025 LEOSPHERE Innovations Pvt. Ltd. All rights reserved.
           </p>
-          
-          </div>
         </div>
       </div>
     </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Fade-in animation on scroll
-        const fadeElements = document.querySelectorAll(".fade-in");
-        function checkFade() {
-          fadeElements.forEach((element) => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            if (elementTop < window.innerHeight - elementVisible) {
-              element.classList.add("visible");
-            }
-          });
-        }
-        window.addEventListener("scroll", checkFade);
-        checkFade(); // Check on initial load
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        // Accordion functionality
-        const accordionHeaders = document.querySelectorAll(".accordion-header");
-        accordionHeaders.forEach((header) => {
-          header.addEventListener("click", function () {
-            const content = this.nextElementSibling;
-            const icon = this.querySelector(".accordion-icon i");
-            if (content.classList.contains("active")) {
-              content.classList.remove("active");
-              icon.classList.remove("ri-subtract-line");
-              icon.classList.add("ri-add-line");
-            } else {
-              content.classList.add("active");
-              icon.classList.remove("ri-add-line");
-              icon.classList.add("ri-subtract-line");
-            }
-          });
-        });
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        // Custom checkbox functionality
-        const ndaCheckbox = document.getElementById("ndaCheckbox");
-        ndaCheckbox.addEventListener("click", function () {
-          this.classList.toggle("checked");
-        });
-      });
-    </script>
-  </body>
+    <script src="script.js"></script>
+    </body>
 </html>
